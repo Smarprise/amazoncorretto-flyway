@@ -19,3 +19,6 @@ steps:
     repository: 'smarprise/amazoncorretto-flyway'
     command: 'buildAndPush'
     Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+    tags: |
+      $(Build.BuildId)
+      latest
