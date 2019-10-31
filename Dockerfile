@@ -1,9 +1,8 @@
-FROM amazoncorretto:11
+FROM smarprise/amazoncorretto11-update:latest
 
 COPY ./flyway.sh /opt/flyway/bin/flyway
 
-RUN yum update -y && yum clean all && rm -rf /var/cache/yum \
-    && chmod 755 /opt/flyway/bin/flyway \
+RUN chmod 755 /opt/flyway/bin/flyway \
     && mkdir -p /opt/flyway/lib \
     && mkdir -p /opt/flyway/jars \
     && mkdir -p /opt/flyway/sql \
